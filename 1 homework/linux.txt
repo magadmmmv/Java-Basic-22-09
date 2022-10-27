@@ -1,0 +1,19 @@
+1) pwd
+2) ls -la
+3) mkdir otusHW
+4) cd otusHW/
+5) df -h
+6) df -h 1> fsinfo
+7) cat fsinfo
+8) cat fsinfo | grep -e 1 -e 2
+9) cp fsinfo fsInfoCopy
+10) cp fsinfo fsInfoCopy2
+11) mv fsInfoCopy2 fsInfoCopy3
+12) rm fsInfoCopy3
+13) head fsInfoCopy
+14) tail fsInfoCopy
+15) touch runIt 
+16) vi runIt
+17) cp fsinfo fsInfoFinal (выход с сохранением: Esc+Shift+zz)
+18) chmod a+x runIt
+19) sh runIt либо ./runIt
