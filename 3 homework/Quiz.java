@@ -29,18 +29,28 @@ public class Quiz {
             }
 
             System.out.println();
-            Scanner scan = new Scanner(System.in);
-            int answer = scan.nextInt();
-
-            if (answer == correctAnswers[i]) {
-                System.out.println("Правильно");
-                countCorrect++;
-            } else {
-                System.out.println("Неправильно");
-                countWrong++;
+            while (true) {
+                Scanner scan = new Scanner(System.in);
+                String answer = scan.next();
+                try {
+                    int answerInt = Integer.parseInt(answer);
+                    if (1 <= answerInt && answerInt <= answers[i].length) {
+                        if (answerInt == correctAnswers[i]) {
+                            System.out.println("Правильно");
+                            countCorrect++;
+                        } else {
+                            System.out.println("Неправильно");
+                            countWrong++;
+                        }
+                        System.out.println();
+                        break;
+                    } else {
+                        System.out.println("Введите число от 1 до " + answers[i].length);
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Введено не целое число, повторите ввод");
+                }
             }
-
-            System.out.println();
         }
 
         System.out.println("Результат: правильно " + countCorrect + ", неправильно " + countWrong);
